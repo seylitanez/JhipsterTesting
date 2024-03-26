@@ -194,12 +194,12 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/realms/jhipster
+            issuer-uri: http://127.0.0.1:9080/realms/jhipster
         registration:
           oidc:
             client-id: internal
             client-secret: internal
-            scope: openid, profile, email, offline_access # last one for refresh tokens
+            scope: openid, profile, email, offline_access # last one for refresh tokens<
 
 server:
   servlet:

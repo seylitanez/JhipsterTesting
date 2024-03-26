@@ -55,7 +55,7 @@ public class AuthorizationHeaderUtil {
                 throw new OAuth2AuthorizationException(new OAuth2Error("access_denied", "The token is expired", null));
             }
             OAuth2AccessToken accessToken = client.getAccessToken();
-
+            System.out.println("------->" + accessToken.getTokenValue());
             if (accessToken != null) {
                 String tokenType = accessToken.getTokenType().getValue();
                 String accessTokenValue = accessToken.getTokenValue();
