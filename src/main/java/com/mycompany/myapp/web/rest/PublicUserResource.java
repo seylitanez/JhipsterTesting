@@ -52,7 +52,7 @@ public class PublicUserResource {
         ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault());
         System.out.println(zonedDateTime);
         String currentUser = SecurityUtils.getCurrentUserLogin().orElseThrow();
-        return "hello, " + currentUser;
+        return "hello, " + currentUser + ".";
     }
 
     /**
