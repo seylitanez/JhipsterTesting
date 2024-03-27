@@ -1,5 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
+import com.mycompany.myapp.security.SecurityUtils;
 import com.mycompany.myapp.service.UserService;
 import com.mycompany.myapp.service.dto.UserDTO;
 import java.time.Instant;
@@ -50,7 +51,8 @@ public class PublicUserResource {
         Instant instant = Instant.now();
         ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault());
         System.out.println(zonedDateTime);
-        return "hello";
+        String currentUser = SecurityUtils.getCurrentUserLogin().orElseThrow();
+        return "hello, " + currentUser;
     }
 
     /**
